@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+
+    <h1>Indice Fibonacci</h1>
+    <input id="input" type="text" placeholder="Digite o número aqui">
+    <button id="btn-input">Enviar</button>
+
+    <script>
+        var btnInput = document.getElementById('btn-input');
+        
+        btnInput.addEventListener('click', () => {
+            var input = parseInt(document.getElementById('input').value);
+            var penultimo = 0;
+            var ultimo = 1;
+            var numero = 0;
+            
+            if (input <=2) {
+                numero = input - 1;
+            } else {
+                for (var i = 3; i <= input; i++) {
+                    numero = penultimo + ultimo;
+                    penultimo = ultimo;
+                    ultimo = numero;
+                }
+            }
+            input = 0;
+            console.log(numero)
+        })
+    </script>
+</body>
+
+</html>
